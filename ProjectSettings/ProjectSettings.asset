@@ -4,7 +4,11 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 20
+<<<<<<< HEAD
   productGUID: 197451fbc4d2fce40afeeed7323db47e
+=======
+  productGUID: 69b00eda5cabc284c94e0831d1007d53
+>>>>>>> a6a76da3fe338ab5a2497f65ff9f8c1c3a2b780d
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -13,7 +17,11 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: DefaultCompany
+<<<<<<< HEAD
   productName: ProjectActionThingy
+=======
+  productName: Project Action Thingy
+>>>>>>> a6a76da3fe338ab5a2497f65ff9f8c1c3a2b780d
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -533,14 +541,22 @@ PlayerSettings:
   apiCompatibilityLevelPerPlatform: {}
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
+<<<<<<< HEAD
   metroPackageName: ProjectActionThingy
+=======
+  metroPackageName: Project Action Thingy
+>>>>>>> a6a76da3fe338ab5a2497f65ff9f8c1c3a2b780d
   metroPackageVersion: 
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
   metroCertificateIssuer: 
   metroCertificateNotAfter: 0000000000000000
+<<<<<<< HEAD
   metroApplicationDescription: ProjectActionThingy
+=======
+  metroApplicationDescription: Project Action Thingy
+>>>>>>> a6a76da3fe338ab5a2497f65ff9f8c1c3a2b780d
   wsaImages: {}
   metroTileShortName: 
   metroTileShowName: 0
