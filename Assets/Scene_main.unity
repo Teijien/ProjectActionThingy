@@ -301,7 +301,7 @@ GameObject:
   - component: {fileID: 395099672}
   m_Layer: 0
   m_Name: CM FreeLook1
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -520,6 +520,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &831562443 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 95122447845762030, guid: 196405dd91626fd4c8aa9160f83204a2, type: 3}
+  m_PrefabInstance: {fileID: 882056422}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &882056422
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -582,7 +587,7 @@ PrefabInstance:
     - target: {fileID: 95122447845762030, guid: 196405dd91626fd4c8aa9160f83204a2, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 152ee00e887f47648afac2960c6afbcb, type: 2}
+      objectReference: {fileID: 9100000, guid: c621d49f973567044823194d88d91d88, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 196405dd91626fd4c8aa9160f83204a2, type: 3}
 --- !u!1 &1263542848
@@ -724,7 +729,7 @@ GameObject:
   - component: {fileID: 1327147288}
   m_Layer: 0
   m_Name: PC
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -758,7 +763,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 1327147289}
   cam: {fileID: 1734212714}
-  Speed: 5
+  animator: {fileID: 831562443}
+  Speed: 6
   turnSmoothTime: 0.1
 --- !u!143 &1327147289
 CharacterController:
