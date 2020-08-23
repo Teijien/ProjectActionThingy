@@ -2,6 +2,10 @@
 // This file defines the types of Nodes found within a behavior tree.
 
 
+using System.Collections;
+using System.Collections.Generic;
+
+
 /* The basic implementation of a tree Node/Task
  *    TaskStatus status: The current status of a task. Propagated up behavior
  *      tree from leaf/action tasks to determine behaviors of Sequence,
@@ -11,12 +15,7 @@
  *      failure. */
 public abstract class Task 
 {
-  protected enum TaskStatus
-  {
-    Success,
-    Failure,
-    Runninng
-  }
+  protected enum TaskStatus { Running, Success, Failure }
 
   protected TaskStatus status;
 
