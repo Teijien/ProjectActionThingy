@@ -4,6 +4,7 @@
 
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine;
 
 
 /* The basic implementation of a tree Node/Task
@@ -38,8 +39,8 @@ public abstract class CompositeTask : Task
 
 
 /* Carries out each child_task in order until one succeeds or all fail
- * If one child_task succeeds, propagates success upward. If all fail, propagates failure
- * upward. */
+ *    If one child_task succeeds, propagates success upward. If all fail, propagates failure
+ *    upward. */
 public class Selector : CompositeTask 
 {
   public Selector(Task[] child_tasks) : base(child_tasks) { }
@@ -60,8 +61,8 @@ public class Selector : CompositeTask
 
 
 /* Carries out each child_task in order until one fails
- * If one child_task fails, propagates failure upwards. If all child_tasks
- * succeed, propagate success upward. */
+ *    If one child_task fails, propagates failure upwards. If all child_tasks
+ *    succeed, propagate success upward. */
 public class Sequencer : CompositeTask 
 {
   public Sequencer(Task[] child_tasks) : base(child_tasks) { }
@@ -80,9 +81,15 @@ public class Sequencer : CompositeTask
   }
 }
 
+
+/* Basic structure of a modifying node 
+ *    This node will only have one child task that it will modify.
+ *    Examples of modifications include: always failing/succeeding, inverting the
+ *    result (i.e.: fail = success and vice versa), or repeating the execution of
+ *    the child node. */
 public abstract class Decorator : Task
 {
-  Task child;
+  protected Task child;
 
   public Decorator(Task child)
   {
@@ -90,4 +97,17 @@ public abstract class Decorator : Task
   }
 
   public abstract override TaskStatus execute();
+}
+
+
+/* Repeats the child task forever */
+public class Repeater : Decorator
+{
+  public Repeater(Task child) : base(child) { }
+
+  public override TaskStatus execute()
+  {
+    Debug.Log("Child returned: " + child.execute());
+    return TaskStatus.Running;
+  }
 }

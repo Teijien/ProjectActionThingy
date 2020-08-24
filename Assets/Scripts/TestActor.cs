@@ -19,7 +19,7 @@ public class TestActor : MonoBehaviour
 
     started_behavior = false;
 
-    m_root = new AlwaysFailTask();
+    m_root = new Repeater(new RandomWalk(this));
   }
 
   // Update is called once per frame
