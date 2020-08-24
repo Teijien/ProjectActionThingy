@@ -15,7 +15,7 @@ using System.Collections.Generic;
  *      failure. */
 public abstract class Task 
 {
-  protected enum TaskStatus { Running, Success, Failure }
+  public enum TaskStatus { Running, Success, Failure }
 
   protected TaskStatus status;
 
@@ -40,13 +40,15 @@ public abstract class CompositeTask : Task
 /* Carries out each child_task in order until one succeeds or all fail
  * If one child_task succeeds, propagates success upward. If all fail, propagates failure
  * upward. */
-public class SelectorTask : CompositeTask 
+public class Selector : CompositeTask 
 {
+  public Selector(Task[] child_tasks) : base(child_tasks) { }
+
   public override TaskStatus execute() 
   {
     foreach (Task task in child_tasks) 
     {
-      TaskStatus success = task.execute;
+      TaskStatus success = task.execute();
       if (success == TaskStatus.Success)
       {
         return TaskStatus.Success;
@@ -60,13 +62,15 @@ public class SelectorTask : CompositeTask
 /* Carries out each child_task in order until one fails
  * If one child_task fails, propagates failure upwards. If all child_tasks
  * succeed, propagate success upward. */
-public class SequenceTask : CompositeTask 
+public class Sequencer : CompositeTask 
 {
+  public Sequencer(Task[] child_tasks) : base(child_tasks) { }
+
   public override TaskStatus execute() 
   {
     foreach (Task task in child_tasks)
     {
-      TaskStatus continue_execution = task.execute;
+      TaskStatus continue_execution = task.execute();
       if (continue_execution != TaskStatus.Success)
       {
         return continue_execution;
@@ -74,4 +78,16 @@ public class SequenceTask : CompositeTask
     }
     return TaskStatus.Success;
   }
+}
+
+public abstract class Decorator : Task
+{
+  Task child;
+
+  public Decorator(Task child)
+  {
+    this.child = child;
+  }
+
+  public abstract override TaskStatus execute();
 }
