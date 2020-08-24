@@ -1,4 +1,8 @@
-﻿using System.Collections;
+﻿/* Roaming Behavior for Testing Behavior Tree
+ *    Tested with 2D sprite in 3D space: Currently does not roam in z
+ *    axis */
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
