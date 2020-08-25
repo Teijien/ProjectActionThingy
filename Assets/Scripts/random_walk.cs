@@ -8,7 +8,7 @@ using UnityEngine;
 
 public class RandomWalk : Task
 {
-  protected Vector3 NextDestination { get; set; }
+  private Vector3 NextDestination { get; set; }
   private TestActor actor;
   public float speed = 3.0f;
 
@@ -28,8 +28,8 @@ public class RandomWalk : Task
     {
       Rect bounds = (Rect)o;
       float x = UnityEngine.Random.value * bounds.width;
-      float y = UnityEngine.Random.value * bounds.height;
-      NextDestination = new Vector3(x, y, NextDestination.z);
+      float z = UnityEngine.Random.value * bounds.height;
+      NextDestination = new Vector3(x, NextDestination.y, z);
     }
 
     return found;
