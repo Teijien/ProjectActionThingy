@@ -1,6 +1,12 @@
-﻿using System.Collections;
+﻿/* General Actor class for AI
+ *    Initializes the working memory (blackboard) for an AI entity and runs the
+ *    entity's behavior. Includes the coroutine for the behavior tree */
+
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 
 public abstract class Actor : MonoBehaviour
 {
