@@ -10,11 +10,12 @@ public class RandomWalk : Task
 {
   private Vector3 NextDestination { get; set; }
   private TestActor actor;
-  public float speed = 3.0f;
+  private float speed;
 
-  public RandomWalk(TestActor actor)
+  public RandomWalk(TestActor actor, float speed)
   {
     this.actor = actor;
+    this.speed = speed;
     NextDestination = Vector3.zero;
     FindNextDestination();
   }

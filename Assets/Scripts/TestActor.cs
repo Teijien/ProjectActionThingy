@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class TestActor : Actor
 {
+  public float speed;
+
   // Start is called before the first frame update
   public override void Start()
   {
@@ -11,7 +13,7 @@ public class TestActor : Actor
 
     blackboard.Add("WorldBounds", new Rect(0, 0, 5, 5));
 
-    m_root = new Repeater(new RandomWalk(this));
+    m_root = new Repeater(new RandomWalk(this, speed));
   }
 
   // Update is called once per frame
