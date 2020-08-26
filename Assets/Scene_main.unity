@@ -708,10 +708,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 95122447845762030, guid: 196405dd91626fd4c8aa9160f83204a2, type: 3}
-      propertyPath: m_Avatar
-      value: 
-      objectReference: {fileID: 9000000, guid: aa5b460e6ecf054499bd23c192b47870, type: 3}
-    - target: {fileID: 95122447845762030, guid: 196405dd91626fd4c8aa9160f83204a2, type: 3}
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: c621d49f973567044823194d88d91d88, type: 2}
@@ -928,8 +924,6 @@ MonoBehaviour:
   turnSmoothTime: 0.1
   jumpForce: 2
   gravity: 4
-  maintainJumpMomentum: 1
-  momentumDecayRate: 1
 --- !u!143 &1327147289
 CharacterController:
   m_ObjectHideFlags: 0
